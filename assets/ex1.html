@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+<script src="/ex1.js"></script>
+<!-- Inspiration:
+  http://docs.angularjs.org/guide/module
+  AngularJS in Action listing 1.10 http://www.manning.com/bford/
+  -->
+</head>
+<body ng-app="meLearnEx1">
+  <div ng-controller="Ex1Ctrl">
+    <p>{{greeting}} {{person}}!</p>
+    <input ng-model="person">
+  </div>
+</body>
+</html>
