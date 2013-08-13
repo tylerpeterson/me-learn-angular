@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="Angello">
+<head>
+  <!-- Inspiration: Following along Chapter 2 of AngularJS in Action http://www.manning.com/bford/ -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+  <script src="app.js"></script>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div ng-controller="MainCtrl">
+    <div class="span4 sidebar-content">
+      <h2>Stories</h2>
+      <div class="story" ng-repeat="story in stories">
+        <h4>{{story.title}}</h4>
+        <p>{{story.description}}</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
