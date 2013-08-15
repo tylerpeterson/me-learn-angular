@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="Angello">
+<head>
+  <!-- Inspiration: Following along Chapter 2 of AngularJS in Action http://www.manning.com/bford/ -->
+  <!-- see also https://github.com/angularjs-in-action/ch02 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+  <script src="http://underscorejs.org/underscore-min.js"></script>
+  <script src="app.js"></script>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div ng-controller="MainCtrl">
+    <div class="span4 sidebar-content">
+      <h2>Stories</h2>
+      <div class="story"
+          ng-repeat="story in stories"
+          ng-click="setCurrentStory(story)">
+        <h4>{{story.title}}</h4>
+        <p>{{story.description}}</p>
+      </div>
+      <button ng-click="newStory()">New Story</button>
+    </div>
+    <div class="span6 body-content">
+      <h2>Story</h2>
+      <form class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for="inputTitle">Title</label>
+          <div class="controls">
+            <input type="text"
+              placeholder="Title"
+              ng-model="currentStory.title">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label"
+            for="inputDescription">Description</label>
+          <div class="controls">
+            <textarea id="inputDescription"
+              placeholder="Description"
+              rows="3"
+              ng-model="currentStory.description">
+            </textarea>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="controls">
+            <button ng-click="deleteStory(currentStory)">Delete</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
