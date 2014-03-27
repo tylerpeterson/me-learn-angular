@@ -4,7 +4,7 @@
   <!-- Inspiration: Following along Chapter 2 of AngularJS in Action http://www.manning.com/bford/ -->
   <!-- see also https://github.com/angularjs-in-action/ch02 -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
-  <script src="http://underscorejs.org/underscore-min.js"></script>
+  <script src="/underscore/underscore-min.js"></script>
   <script src="app.js"></script>
   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
   <link rel="stylesheet" href="app.css">
@@ -30,6 +30,24 @@
             <input type="text"
               placeholder="Title"
               ng-model="currentStory.title">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="inputStatus">Status</label>
+          <div class="controls">
+            <select id="inputStatus"
+              ng-model="currentStatus"
+              ng-options="s.name for s in statuses"
+              ng-change="setCurrentStatus(currentStatus)"></select>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="inputType">Type</label>
+          <div class="controls">
+            <select id="inputType"
+              ng-model="currentType"
+              ng-options="t.name for t in types"
+              ng-change="setCurrentType(currentType)"></select>
           </div>
         </div>
         <div class="control-group">
